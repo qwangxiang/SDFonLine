@@ -15,7 +15,7 @@ dependencies:
   - beautifulsoup4=
   - binaryornot=
   - black=
-  - blas=1.0=
+  - blas=
   - brotlipy=
   - ca-certificates=
   - certifi=
