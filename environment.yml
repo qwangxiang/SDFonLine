@@ -104,13 +104,13 @@ dependencies:
   - qtawesome=
   - qtconsole=
   - qtpy=2.0.1=
-  - regex=2022.7.9=
-  - requests=2.28.1=
-  - rope=0.22.0=
-  - rtree=0.9.7=
+  - regex=
+  - requests=
+  - rope=
+  - rtree=
   - setuptools=
-  - sip=4.19.13=
-  - six=1.16.0=
+  - sip=
+  - six=
   - snowballstemmer=
   - sortedcontainers=
   - sphinx=5.0.2=py39haa95532_0
