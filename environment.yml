@@ -139,7 +139,7 @@ dependencies:
   - vs2015_runtime=
   - wcwidth=
   - wheel=
-  - win_inet_pton=
+  # - win_inet_pton=
   - wincertstore=
   - wrapt=
   - yaml=
