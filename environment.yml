@@ -132,7 +132,7 @@ dependencies:
   - toml=
   - typed-ast=
   - typing_extensions=
-  - ujson=5.4.0=
+  - ujson=
   - unidecode=
   - urllib3=
   - vc=
