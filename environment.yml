@@ -103,7 +103,7 @@ dependencies:
   - qt=
   - qtawesome=
   - qtconsole=
-  - qtpy=2.0.1=
+  - qtpy=
   - regex=
   - requests=
   - rope=
