@@ -30,7 +30,7 @@ dependencies:
   - docutils=
   - entrypoints=
   - flake8=
-  - icc_rt=
+  # - icc_rt=
   - icu=
   - idna=
   - imagesize=
@@ -135,8 +135,8 @@ dependencies:
   - ujson=
   - unidecode=
   - urllib3=
-  - vc=
-  - vs2015_runtime=
+  # - vc=
+  # - vs2015_runtime=
   - wcwidth=
   - wheel=
   # - win_inet_pton=
