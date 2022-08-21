@@ -95,7 +95,7 @@ dependencies:
   - python-lsp-server=
   - python-slugify=
   - pytz=
-  - pywin32-ctypes=
+  # - pywin32-ctypes=
   - pyyaml=
   - pyzmq=
   - qdarkstyle=
@@ -113,7 +113,7 @@ dependencies:
   - six=
   - snowballstemmer=
   - sortedcontainers=
-  - sphinx=5.0.2=py39haa95532_0
+  - sphinx=
   - sphinxcontrib-applehelp=
   - sphinxcontrib-devhelp=
   - sphinxcontrib-htmlhelp=
@@ -140,7 +140,7 @@ dependencies:
   - wcwidth=
   - wheel=
   # - win_inet_pton=
-  - wincertstore=
+  # - wincertstore=
   - wrapt=
   - yaml=
   - yapf=
