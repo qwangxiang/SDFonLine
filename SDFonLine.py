@@ -20,7 +20,7 @@ if my_select=="Homepage":
         &emsp;&emsp;some models created by SDF.
         """
     with c2:
-        st.image(Image.open(r'pictures\\081001.jpg'))
+        st.image(Image.open('pictures\\081001.jpg'))
     """
     ---\n
     &emsp;&emsp;*Some of the models are listed as follows* 
