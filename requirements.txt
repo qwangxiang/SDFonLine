@@ -1,8 +1,0 @@
-matplotlib=
-meshio=
-numpy=
-Pillow=
-scikit_image=
-scipy=
-skimage=
-streamlit=
