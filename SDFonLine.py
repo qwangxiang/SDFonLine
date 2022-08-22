@@ -27,11 +27,11 @@ if my_select=="Homepage":
     """ 
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.image(Image.open(r'pictures/080901.png'))
+        st.image(Image.open('pictures/080901.png'))
     with c2:
-        st.image(Image.open(r'pictures/080902.png'))
+        st.image(Image.open('pictures/080902.png'))
     with c3:
-        st.image(Image.open(r'pictures/080903.png'))
+        st.image(Image.open('pictures/080903.png'))
     
 # what is sdf
 if my_select=="What is SDF":
