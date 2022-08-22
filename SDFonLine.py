@@ -20,18 +20,18 @@ if my_select=="Homepage":
         &emsp;&emsp;some models created by SDF.
         """
     with c2:
-        st.image(Image.open('pictures/081001.jpg'))
+        st.image(Image.open(r'pictures/081001.jpg'))
     """
     ---\n
     &emsp;&emsp;*Some of the models are listed as follows* 
     """ 
     c1, c2, c3 = st.columns(3)
     with c1:
-        st.image(Image.open('pictures/080901.png'))
+        st.image(Image.open(r'pictures/080901.png'))
     with c2:
-        st.image(Image.open('pictures/080902.png'))
+        st.image(Image.open(r'pictures/080902.png'))
     with c3:
-        st.image(Image.open('pictures/080903.png'))
+        st.image(Image.open(r'pictures/080903.png'))
     
 # what is sdf
 if my_select=="What is SDF":
@@ -55,7 +55,7 @@ f.save('out.stl') \n
             """  #这个对齐真的很怪~
     with c2:
         with st.expander("OUTPUT", False):
-            st.image(Image.open('pictures/080802.png'), width=300, caption="model")
+            st.image(Image.open(r'pictures/080802.png'), width=300, caption="model")
     f = sphere(1) & box(1.5)
     c = cylinder(0.5)
     f -= c.orient(X) | c.orient(Y) | c.orient(Z)
