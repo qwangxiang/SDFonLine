@@ -1,8 +1,10 @@
 import streamlit as st
 from PIL import Image
 from d3 import *
+import xml.etree.ElementTree as ET
 
 # st.balloons()
+# st.snow()
  
 # sidebar
 st.sidebar.write("&emsp;&emsp;\"*We will begin a fantastic journey.*\"")
@@ -130,10 +132,117 @@ if my_select=="Combined models":
     """gugugu~~~"""
     
 # From xml files
+def xml_paser():
+    global length
+    # xml_file = st.file_uploader("Choose a file")
+    # if xml_file is not None:
+    #     tr = ET.parse(xml_file)
+    #     root = tr.getroot()
+    #     length = len(root)
+    # 节点的类别鉴定
+    # '''
+    # 0 ---->None
+    # 1 ----> Object:sphere, box...
+    # 2 ----> Sign:Cut...
+    # 3 ----> Panel
+    # '''
+    Object = ['Sphere', 'Box', 'Rounded_box', 'Wireframe_box', 'Torus', 'Capsule', 'Cylinder']
+    Sign = ['Cut']
+    def get_which(name):
+        for i in Object:
+            if name==i:
+                return 1
+        for i in Sign:
+            if name==i:
+                return 2
+        if name=='Panel':
+            return 3
+        return 0
+
+
+    # 获得节点的名字及其对应关系
+    Name = []
+    Id =[]
+    tree = []
+    for i in range(length):
+        num = len(root[i])
+        Id.append([])
+        tree.append([])
+        Id[i].append([])
+        Id[i].append([])
+        Name.append(root[i][1].text)
+        for j in range(num):
+            if root[i][j].tag=='Output':
+                Id[i][0].append(root[i][j][0].text)
+            if root[i][j].tag=='Input':
+                Id[i][1].append(root[i][j][2].text)
+                for ii in range(length):
+                    num1 = len(root[ii])
+                    for jj in range(num1):
+                        if root[ii][jj].tag=='Output' and root[ii][jj][0].text==root[i][j][2].text:
+                            tree[i].append(ii)
+                
+
+    # 找到最高层对应的序号
+    def in_Name(name):
+        for i in range(length):
+            if Name[i] == name:
+                return True
+        return False
+    def find_root():
+        for i in range(length):
+            num = len(root[i])
+            count = 0
+            for j in range(num):
+                if root[i][j].tag == 'Output' and in_Name(root[i][j][1].text):
+                    count +=1
+            if count==0:
+                return i
+
+
+    # 建模部分
+    def get_model(index):
+        flag = get_which(Name[index])
+        if flag==3:
+            return (int(root[index][2][1].text))/100
+        if flag==1:
+            num = len(root[index])
+            if Name[index]=='Cylinder':
+                r = get_model(tree[index][0])
+                h = get_model(tree[index][1])
+                return capped_cylinder(-Z, Z, r)
+            if Name[index]=='Box':
+                l = get_model(tree[index][0])
+                w = get_model(tree[index][1])
+                h = get_model(tree[index][2])
+                return box((l, w, h))
+        if flag==2:
+            f = []
+            num = len(tree[index])
+            for i in range(num):
+                f.append(get_model(tree[index][i]))
+            if Name[index]=='Cut':
+                temp = f[0] - f[1]
+                return temp
+        pass
+    
+    # 测试区
+    top = find_root()
+    f = get_model(top)
+    f.save('out.stl')
+
 if my_select=="From xml files":
     """On this page, you can get sample models from xml files made from Grasshopper's ghx files.\n
-    ---
+---
     """
+    xml_file = st.file_uploader("Choose a file")
+    if xml_file is not None:
+        tr = ET.parse(xml_file)
+        root = tr.getroot()
+        length = len(root)
+        xml_paser()
+        file = open('out.stl', "rb")
+        st.download_button(label="Download", data=file, mime='application/vnd.ms-pkistl', file_name="out.stl", help="Click to download the stl file")
     pass
 
 
