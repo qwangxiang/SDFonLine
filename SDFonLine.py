@@ -7,7 +7,7 @@ from d3 import *
 # sidebar
 st.sidebar.write("&emsp;&emsp;\"*We will begin a fantastic journey.*\"")
 my_select = "Welcome"
-my_select = st.sidebar.selectbox("Please select:", ("Homepage", "What is SDF", "Basic models", "Combined models"))
+my_select = st.sidebar.selectbox("Please select:", ("Homepage", "What is SDF", "Basic models", "Combined models","From xml files"))
 
 # homepage
 if my_select=="Homepage":
@@ -129,6 +129,15 @@ if my_select=="Basic models":
 if my_select=="Combined models":
     """gugugu~~~"""
     
+# From xml files
+if my_select=="From xml files":
+    """
+    On this page, you can get sample models from xml files made from Grasshopper's ghx files.  
+    ---
+    """
+    pass
+
+
 
 # aphorism
 """
