@@ -246,8 +246,6 @@ if my_select=="From xml files":
     pass
 
 
-file = open('out.stl', "rb")
-st.download_button(label="Download", data=file, mime='application/vnd.ms-pkistl', file_name="out.stl", help="Click to download the stl file")
 # aphorism
 """
 &nbsp;\n
