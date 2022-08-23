@@ -3,6 +3,14 @@ from PIL import Image
 from d3 import *
 import xml.etree.ElementTree as ET
 
+st.set_page_config(
+    page_title="SDFonLine by Axiang",
+    page_icon=None,
+    layout="centered",
+    initial_sidebar_state="collapsed",
+    menu_items=None
+)
+
 # st.balloons()
 # st.snow()
  
