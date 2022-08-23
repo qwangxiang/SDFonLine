@@ -131,7 +131,7 @@ if my_select=="Combined models":
     
 # From xml files
 if my_select=="From xml files":
-    """On this page, you can get sample models from xml files made from Grasshopper's ghx files.  
+    """On this page, you can get sample models from xml files made from Grasshopper's ghx files.\n
     ---
     """
     pass
