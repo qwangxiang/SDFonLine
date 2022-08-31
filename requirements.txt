@@ -8,3 +8,5 @@ scipy==1.7.3
 streamlit==1.12.2
 vtk==9.1.0
 libgl1
+freeglut3-dev
+libgtk2.0-dev
