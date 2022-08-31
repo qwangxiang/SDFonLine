@@ -3,6 +3,6 @@ meshio==5.3.4
 numpy==1.21.5
 Pillow==9.2.0
 scipy==1.7.3
-skimage==0.0
+skimage
 streamlit==1.12.2
 vtk==9.1.0
