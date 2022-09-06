@@ -21,7 +21,7 @@ st.set_page_config(
 # sidebar
 st.sidebar.write("&emsp;&emsp;\"*We will begin a fantastic journey.*\"")
 my_select = "Welcome"
-my_select = st.sidebar.selectbox("Please select:", ("Homepage", "What is SDF", "Basic models", "Combined models","From xml files"))
+my_select = st.sidebar.selectbox("Please select:", ("Homepage", "What is SDF", "Basic models", "Combined models","From xml files", "View .stl file"))
 
 # homepage
 if my_select=="Homepage":
@@ -261,7 +261,11 @@ if my_select=="From xml files":
     pass
 
 # view stl files
-components.iframe('https://www.viewstl.com/?embedded')
+if my_select=="View .stl file":
+    '''This page provides you with the function to **view and react with .stl file**.\n
+---
+    '''
+    components.iframe('https://www.viewstl.com/?embedded')
 
 # aphorism
 """
