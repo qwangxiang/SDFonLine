@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 from d3 import *
 import xml.etree.ElementTree as ET
+import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="SDFonLine by Axiang",
@@ -11,6 +12,11 @@ st.set_page_config(
     menu_items=None
 )
 
+components.iframe('https://www.viewstl.com/?embedded')
+
+# components.html(
+#     <iframe id="vs_iframe" src="https://www.viewstl.com/?embedded" style="border:0;margin:0;width:100%;height:100%;"></iframe>
+# )
 # st.balloons()
 # st.snow()
 
