@@ -12,8 +12,6 @@ st.set_page_config(
     menu_items=None
 )
 
-components.iframe('https://www.viewstl.com/?embedded')
-
 # components.html(
 #     <iframe id="vs_iframe" src="https://www.viewstl.com/?embedded" style="border:0;margin:0;width:100%;height:100%;"></iframe>
 # )
@@ -262,6 +260,8 @@ if my_select=="From xml files":
         st.download_button(label="Download", data=file, mime='application/vnd.ms-pkistl', file_name="out.stl", help="Click to download the stl file")
     pass
 
+# view stl files
+components.iframe('https://www.viewstl.com/?embedded')
 
 # aphorism
 """
